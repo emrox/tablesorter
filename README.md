@@ -22,6 +22,14 @@ gives
 When selected the link will be given a class of selected and either asc or desc.
 You can use this to style the span with an arrow.
 
+## Styling
+
+If you want different headings to be displayed in youur table headings use translations under the tablesorter namespace.
+
+    en:
+      tablesorter:
+        age: 'Age (in years)'
+
 ## Active Record
 tablesort method
 
