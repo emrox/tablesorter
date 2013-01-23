@@ -1,14 +1,14 @@
-= Tablesorter
+# Tablesorter
 
-=view helper
+## View Helpers
 
-sortable_column_headings(columns, options={})
+    sortable_column_headings(columns, options={})
 
 so
 
-<tr>
-  <%= sortable_column_headings('name', 'age') %>
-</tr>
+    <tr>
+      <%= sortable_column_headings('name', 'age') %>
+    </tr>
 
 gives
 
@@ -20,18 +20,16 @@ gives
 When selected the link will be given a class of selected and either asc or desc.
 You can use this to style the span with an arrow.
 
-= Active Record
+## Active Record
+
 tablesort method
-
-table_sort(sort_attr, dir, default_attr, default_dir)
-
+    table_sort(sort_attr, dir, default_attr, default_dir)
 eg 
-
-Person.table_sort('name', 'asc', 'id', 'asc')
+    Person.table_sort('name', 'asc', 'id', 'asc')
 
 This project uses the MIT-LICENSE.
 
-=TODO
+## TODO
 Test!
 twitter bootstrap arrows option 
 Secondary sort
