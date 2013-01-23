@@ -35,6 +35,8 @@ This project uses the MIT-LICENSE.
 
 ## TODO
 * Test!
+* Add a note about translations for table headings
+* maybe extend api of helper method so you can pass a hash rather then an array
 * Improve readme and add some default css to show arrow styling
 * twitter bootstrap arrows option 
 * Secondary sort
