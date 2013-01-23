@@ -1,5 +1,7 @@
 # Tablesorter
 
+==============================================================================================
+
 ## View Helpers
 
     sortable_column_headings(columns, options={})
