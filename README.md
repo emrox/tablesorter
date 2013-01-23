@@ -32,9 +32,10 @@ eg
 This project uses the MIT-LICENSE.
 
 ## TODO
-Test!
-twitter bootstrap arrows option 
-Secondary sort
-Dont call order if no params passed
-mongoid?
-datamapper?
+* Test!
+* Improve readme and add some default css to show arrow styling
+* twitter bootstrap arrows option 
+* Secondary sort
+* Dont call order if no params passed
+* mongoid?
+* datamapper?
