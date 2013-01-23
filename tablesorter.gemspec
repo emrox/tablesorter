@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Tablesorter::VERSION
   s.authors     = 'Luke Roberts'
   s.email       = "luke@llamadigital.net"
-  s.homepage    = "github.com/lukeroberts1990/tablesorter"
+  s.homepage    = "http://github.com/lukeroberts1990/tablesorter"
   s.summary     = "A gem for creating sortable tables in rails applications" 
   s.description = "This gem provides helpers for building sortable column headings in a table with links. 
                    It also monkey patches (for better or for worse) ActiveRecord and provides a more 
