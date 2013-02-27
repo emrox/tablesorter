@@ -9,14 +9,14 @@
 so
 
     <tr>
-      <%= sortable_column_headings('name', 'age') %>
+      <%= sortable_column_headings(['name', 'age']) %>
     </tr>
 
 gives
 
     <tr>
       <th><a href="?dir=asc&sort=name">Name<span></span></a></th>
-      <th><a href="?dir=asc&sort=name">Name<span></span></a></th>
+      <th><a href="?dir=asc&sort=age">Age<span></span></a></th>
     </tr>
 
 When selected the link will be given a class of selected and either asc or desc.
@@ -24,7 +24,7 @@ You can use this to style the span with an arrow.
 
 ## Styling
 
-If you want different headings to be displayed in youur table headings use translations under the tablesorter namespace.
+If you want different headings to be displayed in your table headings use translations under the tablesorter namespace.
 
     en:
       tablesorter:
@@ -37,7 +37,7 @@ tablesort method
 
 eg 
 
-    Person.table_sort('name', 'asc', 'id', 'asc')
+    Person.scoped.table_sort(params[:sort], params[:dir], 'id', 'asc')
 
 This project uses the MIT-LICENSE.
 
