@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
                    expand this API to provide default and secondary sorts. 
                    It's very basic but I have built this functionality enough times to warrant gemification
                    Features via pull requests welcome"
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
   s.add_dependency "rails", "~> 3.1"
 end

@@ -1,9 +1,9 @@
 module Tablesorter
   module ActiveRecord
-    def table_sort(sort_attr, dir, default_attr, default_dir)
-      sort_attr ||= default_attr
-      dir ||= default_attr
-      self.order("#{sort_attr} #{dir}")
+    def table_sort(sort_attr, dir_attr, default_sort, default_dir)
+      sort  = sort_attr.presence || default_sort
+      dir   = dir_attr.presence  || default_dir
+      self.order("#{sort} #{dir}")
     end
   end
 end
