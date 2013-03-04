@@ -12,9 +12,6 @@ module Tablesorter
         current_dir = current_dir.to_sym
       end
 
-      options = options.merge(params).reject! { |k| k == 'sort' }
-      options = options.merge(params).reject! { |k| k == 'dir' }
-
       columns.inject('') do |acc, col|
         sym = col.to_sym
         dir = (current_sort==sym && current_dir==:asc) ? 'desc' : 'asc'
@@ -23,18 +20,14 @@ module Tablesorter
         css_classes << 'selected' if current_sort==sym
         css_classes << dir.to_s if current_sort==sym
 
-        acc + 
-          '<th>' + 
-          "<a #{css_class_attribute(css_classes)} href='?" +
-          options.merge(sort:sym.to_s, dir:dir).to_query +
-          "'>" +
-          "#{title}<span></span></a>" +
+        acc + '<th>' + 
+          link_to("#{title} <span></span>".html_safe, url_for(params.merge({sort:sym.to_s, dir:dir})), css_class_attribute(css_classes)) +
           '</th>'
       end.html_safe
     end
 
     def css_class_attribute(css_classes)
-      css_classes.present? ? "class='#{css_classes.join(' ')}'" : ''
+      css_classes.present? ? { class:"#{css_classes.join(' ')}" } : {}
     end
   end
 end
