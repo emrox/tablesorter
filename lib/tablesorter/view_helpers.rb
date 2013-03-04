@@ -12,8 +12,8 @@ module Tablesorter
         current_dir = current_dir.to_sym
       end
 
-      options.merge(parmas).reject! { |k| k == 'sort' }
-      options.merge(parmas).reject! { |k| k == 'dir' }
+      options.merge(params).reject! { |k| k == 'sort' }
+      options.merge(params).reject! { |k| k == 'dir' }
 
       columns.inject('') do |acc, col|
         sym = col.to_sym
