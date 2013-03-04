@@ -12,6 +12,9 @@ module Tablesorter
         current_dir = current_dir.to_sym
       end
 
+      options.merge(parmas).reject! { |k| k == 'sort' }
+      options.merge(parmas).reject! { |k| k == 'dir' }
+
       columns.inject('') do |acc, col|
         sym = col.to_sym
         dir = (current_sort==sym && current_dir==:asc) ? 'desc' : 'asc'
