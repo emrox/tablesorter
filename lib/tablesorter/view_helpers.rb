@@ -1,16 +1,8 @@
 module Tablesorter
   module ViewHelpers
     def sortable_column_headings(columns, options={})
-
-      current_sort = params[:sort]
-      if current_sort.present?
-        current_sort = current_sort.to_sym
-      end
-
-      current_dir = params[:dir]
-      if current_dir.present?  
-        current_dir = current_dir.to_sym
-      end
+      current_sort = params[:sort].presence.try(:to_sym)
+      current_dir = params[:dir].presence.try(:to_sym)
 
       columns.inject('') do |acc, col|
         sym = col.to_sym
