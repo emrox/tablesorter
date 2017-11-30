@@ -20,8 +20,11 @@ module Tablesorter
         css_classes << 'selected' if current_sort==sym
         css_classes << dir.to_s if current_sort==sym
 
-        acc + '<th>' + 
-          link_to("#{title} <span></span>".html_safe, url_for(params.merge({sort:sym.to_s, dir:dir})), css_class_attribute(css_classes)) +
+        url = url_for(params.clone.merge({ sort: sym.to_s, dir: dir }).permit!)
+
+        acc +
+          '<th>' +
+          link_to("#{title} <span></span>".html_safe, url, css_class_attribute(css_classes)) +
           '</th>'
       end.html_safe
     end
