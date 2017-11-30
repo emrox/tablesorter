@@ -6,11 +6,13 @@ module Tablesorter
 
       columns.inject('') do |acc, col|
         sym = col.to_sym
-        dir = (current_sort==sym && current_dir==:asc) ? 'desc' : 'asc'
-        title = I18n.t(('tablesorter.'+sym.to_s).to_sym, :default => sym.to_s.humanize)
+        dir = (current_sort == sym && current_dir == :asc) ? :desc : :asc
+
+        title = I18n.t(("tablesorter.#{sym}").to_sym, default: sym.to_s.humanize)
+
         css_classes = []
-        css_classes << 'selected' if current_sort==sym
-        css_classes << dir.to_s if current_sort==sym
+        css_classes << 'selected' if current_sort == sym
+        css_classes << dir.to_s if current_sort == sym
 
         url = url_for(params.clone.merge({ sort: sym.to_s, dir: dir }).permit!)
 
